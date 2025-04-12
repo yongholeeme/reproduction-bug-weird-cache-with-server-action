@@ -7,7 +7,7 @@ export default function Home() {
         <>
             <h1>it's /</h1>
             <Link href="/a">➡️ /a</Link>
-            <Link href="/test">➡️ /b</Link>
+            <Link href="/b">➡️ /b</Link>
         </>
     )
 }

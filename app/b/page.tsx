@@ -9,7 +9,9 @@ import {RouterPushInAsync} from '@/app/_components/RouterPushInAsync'
 export default async function BPage() {
     return (
         <>
-            <h1>it's /b</h1>
+            <h1>
+                /b page rendered at <b>{new Date().getMilliseconds()}</b>
+            </h1>
             <Link href="/a">➡️ /a</Link>
             <RouterPush href="/a" />
             <RouterPushInAsync href="/a" />
