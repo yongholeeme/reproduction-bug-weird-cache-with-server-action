@@ -1,10 +1,4 @@
-import Link from 'next/link'
-
-import {BackButton} from '@/app/_components/BackButton'
-import {RedirectInAction} from '@/app/_components/RedirectInAction'
-import {RouterPush} from '@/app/_components/RouterPush'
-import {RouterPushAfterActionInAsync} from '@/app/_components/RouterPushAfterActionInAsync'
-import {RouterPushInAsync} from '@/app/_components/RouterPushInAsync'
+import {Buttons} from '@/app/_components/Buttons'
 
 export default async function BPage() {
     return (
@@ -12,12 +6,7 @@ export default async function BPage() {
             <h1>
                 /b page rendered at <b>{new Date().getMilliseconds()}</b>
             </h1>
-            <Link href="/a">➡️ /a</Link>
-            <RouterPush href="/a" />
-            <RouterPushInAsync href="/a" />
-            <RouterPushAfterActionInAsync href="/a" />
-            <RedirectInAction href="/a" />
-            <BackButton />
+            <Buttons href="/a" />
         </>
     )
 }
