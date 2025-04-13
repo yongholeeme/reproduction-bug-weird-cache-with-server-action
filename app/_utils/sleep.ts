@@ -1,3 +1,3 @@
-export default function sleep(ms = 1000) {
+export default function sleep(ms = 10) {
     return new Promise<void>((resolve) => setTimeout(resolve, ms))
 }

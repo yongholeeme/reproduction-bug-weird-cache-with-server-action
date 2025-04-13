@@ -36,8 +36,9 @@ export default function RootLayout({
                     {children}
                     <hr />
                     <i>
-                        Layout persists across routes and maintains state. However, in the above underlined situations,
-                        Layout cannot be persisted across routes and doesn't maintain state.
+                        Layout persists across routes and maintains state. However, in{' '}
+                        <b style={{color: 'red'}}>the above red colored situations</b>, Layout cannot be persisted
+                        across routes and doesn't maintain state.
                     </i>
                 </div>
             </body>

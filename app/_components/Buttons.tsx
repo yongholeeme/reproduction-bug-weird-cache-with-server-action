@@ -1,9 +1,8 @@
 'use client'
-
 import Link from 'next/link'
 import {useRouter} from 'next/navigation'
 
-import {redirectInAction, someAction} from '@/app/_action'
+import {redirectInAction, noopAction} from '@/app/_action'
 import sleep from '@/app/_utils/sleep'
 
 export function Buttons({href}: {href: string}) {
@@ -11,45 +10,55 @@ export function Buttons({href}: {href: string}) {
 
     return (
         <>
-            <Link href={href}>➡️ /b</Link>
+            <Link href={href}>{'<Link />'}</Link>
             <button
                 type="button"
                 onClick={() => {
                     router.push(href)
                 }}
             >
-                ➡️ {href} using router.push
+                router.push()
+            </button>
+            <button type="button" onClick={() => router.back()}>
+                router.back()
             </button>
             <button
                 type="button"
                 onClick={async () => {
-                    await sleep(100)
+                    await sleep()
                     router.push(href)
                 }}
             >
-                ➡️ {href} using router.push in async
+                await sleep() <br /> router.push(href)
             </button>
             <button
                 type="button"
                 onClick={async () => {
-                    await someAction()
+                    await noopAction()
                     router.push(href)
                 }}
-                style={{textDecoration: 'underline'}}
+                style={{color: 'red'}}
             >
-                ➡️ {href} using router.push after action in async
+                await noopAction() <br /> router.push(href)
+            </button>
+            <button
+                type="button"
+                onClick={async () => {
+                    await noopAction()
+                    await sleep()
+                    router.push(href)
+                }}
+            >
+                await noopAction() <br /> await sleep() <br /> router.push(href)
             </button>
             <button
                 type="button"
                 onClick={async () => {
                     await redirectInAction(href)
                 }}
-                style={{textDecoration: 'underline'}}
+                style={{color: 'red'}}
             >
-                ➡️ {href} using redirect in action
-            </button>
-            <button type="button" onClick={() => router.back()}>
-                router.back()
+                await redirectInAction()
             </button>
         </>
     )
