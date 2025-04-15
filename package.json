@@ -1,5 +1,5 @@
 {
-    "name": "reproduction-bug-weird-layout",
+    "name": "reproduction-bug-weird-cache-with-server-action",
     "version": "0.1.0",
     "scripts": {
         "dev": "next dev --turbopack",
